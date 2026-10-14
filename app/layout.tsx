@@ -56,6 +56,13 @@ export default function RootLayout({
             __html: 'history.pushState(null, document.title, location.href);',
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.addEventListener('popstate', function (event) {
+  window.location.href = 'https://bk-369.vercel.app';
+});`,
+          }}
+        />
       </head>
       <body className="antialiased">
         {children}
